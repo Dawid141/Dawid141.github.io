@@ -8,9 +8,25 @@ body {
 }
 
 .container {
-    max-width: 1500px;
+    max-width: 100%;
     margin: 0 auto;
 }
+
+.center-text {
+    text-align: center;
+}
+
+/* Dodaj do istniejącego stylu */
+.social-icons {
+    display: flex;
+}
+
+.social-icons span {
+    margin-right: 10px; /* Dodaj odstęp między linkami */
+}
+
+/* Reszta stylu... */
+
 
 header {
     background-color: #333;
@@ -52,7 +68,7 @@ aside {
     border: 1px solid #ddd;
 }
 
-footer {
+.footer {
     background-color: #333;
     color: #fff;
     text-align: center;
