@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odliczanie czasu</title>
+    <link rel="stylesheet" href="style_podstrony.css">
+</head>
+<body>
+
+<div class="container header">
+    <header>
+        <h1>Odliczanie czasu</h1>
+    </header>
+</div>
+
+<div class="container main">
+    <label for="inputField">Wprowadź liczbę sekund:</label>
+    <input type="number" id="inputField" placeholder="Podaj liczbę sekund">
+    <button onclick="startCountdown()">Start</button>
+    <div id="countdown">00</div>
+</div>
+
+<script>
+    let intervalId;
+
+    function startCountdown() {
+        const seconds = parseInt(document.getElementById('inputField').value);
+
+        let remainingSeconds = seconds;
+        updateCountdown(remainingSeconds);
+
+        intervalId = setInterval(function() {
+            remainingSeconds--;
+
+            if (remainingSeconds >= 0) {
+                updateCountdown(remainingSeconds);
+            } else {
+                clearInterval(intervalId);
+            }
+        }, 1000);
+    }
+
+    function updateCountdown(seconds) {
+        document.getElementById('countdown').innerText = seconds;
+    }
+</script>
+</body>
+</html>
