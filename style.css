@@ -1,10 +1,10 @@
 /* style.css */
 
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: background-color 1s; /* Dodaj ogólny efekt przejścia dla tła strony */
 }
 
 .container {
@@ -16,21 +16,48 @@ body {
     text-align: center;
 }
 
-/* Dodaj do istniejącego stylu */
-.social-icons {
-    display: flex;
+.container.main {
+    padding: 20px; /* Dodaj padding dla lepszego rozkładu treści */
 }
 
-.social-icons span {
-    margin-right: 10px; /* Dodaj odstęp między linkami */
+.container.main section {
+    max-width: 800px; /* Ogranicz szerokość tekstu dla czytelności */
+    margin: 0 auto; /* Wyśrodkuj tekst */
 }
 
-/* Reszta stylu... */
+/* Dodaj do pliku style.css */
+
+/* Dodaj do pliku style.css */
+
+/* Dodaj do pliku style.css */
+
+.sidebar-right {
+    flex: 0 0 25%; /* Szerokość kontenera sidebar - możesz dostosować według potrzeb */
+    margin: 1em;
+    padding: 1em;
+    border: 1px solid #ddd;
+    background-color: #f1f1f1; /* Kolor tła dla kontrastu */
+    position: fixed; /* Kontener będzie stał na swoim miejscu nawet przy przewijaniu */
+    center: 0;
+    right: 0; /* Umieść kontener na prawo */
+    max-height: 100vh; /* Maksymalna wysokość, aby nie zajmował całego ekranu */
+    overflow: auto; /* Dodaj pasek przewijania, jeśli zawartość jest zbyt duża */
+}
+
+.sidebar-right h2 {
+    color: #333; /* Kolor tytułu */
+}
+
+.sidebar-right p {
+    color: #555; /* Kolor tekstu w kontenerze sidebar */
+}
+
+
 
 
 header {
-    background-color: #333;
-    color: #fff;
+    background-color: #DDD0C8; /* Beige */
+    color: #323232; /* Dark grey for text on beige background */
     text-align: center;
     padding: 1em;
 }
@@ -38,13 +65,21 @@ header {
 nav {
     display: flex;
     justify-content: space-around;
-    background-color: #444;
+    background-color: #323232; /* Dark grey */
     padding: 1em;
 }
 
 nav a {
     color: #fff;
     text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: #555; /* Dodaj kolor tła */
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #777; /* Zmiana koloru tła po najechaniu myszką */
 }
 
 section {
@@ -69,8 +104,81 @@ aside {
 }
 
 .footer {
-    background-color: #333;
-    color: #fff;
+    background-color: #DDD0C8; /* Beige for consistency with header */
+    color: #323232; /* Dark grey for text on beige background */
     text-align: center;
     padding: 1em;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    border-top: 1px solid #777; /* Dodaj górną ramkę */
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Styl ikon mediów społecznościowych */
+.social-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-icons a {
+    margin: 0 10px; /* Odstęp między ikonami */
+}
+
+/* Dodaj klasę minutnik */
+.minutnik {
+    text-align: center;
+    margin-top: 20px; /* Dodaj margines na górę dla estetyki */
+}
+
+.minutnik input {
+    padding: 15px; /* Zwiększ rozmiar pola do wprowadzania czasu */
+    font-size: 18px; /* Zwiększ rozmiar czcionki */
+    border: 2px solid #555; /* Dodaj obramowanie pola do wprowadzania czasu */
+    border-radius: 5px; /* Zaokrąglony kształt */
+    margin-right: 10px; /* Dodaj odstęp między polem a przyciskiem */
+}
+
+.minutnik button {
+    padding: 15px 20px; /* Zwiększ rozmiar przycisku */
+    font-size: 18px; /* Zwiększ rozmiar czcionki */
+    border-radius: 10px; /* Zaokrąglony kształt przycisku */
+    background-color: #555; /* Kolor tła przycisku */
+    color: #fff; /* Kolor tekstu przycisku */
+    transition: background-color 0.3s;
+}
+
+.minutnik button:hover {
+    background-color: #777; /* Zmiana koloru tła po najechaniu myszką */
+}
+
+.minutnik #countdown {
+    font-size: 36px; /* Zwiększ rozmiar czcionki dla wyświetlanego czasu */
+    margin-top: 20px; /* Dodaj dodatkowy margines na górę */
+}
+
+/* Dodaj styl dla sekcji kolor */
+.kolor {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.kolor button {
+    padding: 15px 20px; /* Zwiększ rozmiar przycisku */
+    border-radius: 10px; /* Zaokrąglony kształt przycisku */
+    background-color: #555; /* Kolor tła przycisku */
+    color: #fff; /* Kolor tekstu przycisku */
+    transition: background-color 0.3s;
+}
+
+.kolor button:hover {
+    background-color: #777; /* Zmiana koloru tła po najechaniu myszką */
 }

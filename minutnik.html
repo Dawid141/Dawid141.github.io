@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Odliczanie czasu</title>
-    <link rel="stylesheet" href="style_podstrony.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -14,11 +14,39 @@
     </header>
 </div>
 
-<div class="container main">
-    <label for="inputField">Wprowadź liczbę sekund:</label>
-    <input type="number" id="inputField" placeholder="Podaj liczbę sekund">
+<div class="container nav">
+    <nav>
+        <a href="index.html">Strona Główna</a>
+        <a href="kolory.html">Kolory</a>
+        <a href="minutnik.html">Minutnik</a>
+        <!-- Dodaj kolejne linki do innych podstron, jeśli są dostępne -->
+    </nav>
+</div>
+
+<div class="container minutnik">
+    <label for="inputField">Wprowadź ilość sekund:</label>
+    <input type="number" id="inputField" placeholder="Podaj ilość sekund">
     <button onclick="startCountdown()">Start</button>
-    <div id="countdown">00</div>
+    <div id="countdown">00:00</div>
+</div>
+
+<div class="container footer">
+    <footer>
+        &copy; 2023 Strona na potrzeby kursu Techniki WWW.
+        <div class="social-icons">
+            <a href="https://www.facebook.com/dawid.stefanowicz.33/" target="_blank">
+                <img src="facebook.png" alt="Facebook" width="30" height="30">
+            </a>
+            <span class="icon-spacing"></span> <!-- Odstęp między ikonami -->
+            <a href="https://github.com/Dawid141" target="_blank">
+                <img src="github.png" alt="Github" width="30" height="30">
+            </a>
+            <span class="icon-spacing"></span> <!-- Odstęp między ikonami -->
+            <a href="https://www.instagram.com/stefanowicz_bb" target="_blank">
+                <img src="instagram.png" alt="Instagram" width="30" height="30">
+            </a>
+        </div>
+    </footer>
 </div>
 
 <script>
@@ -27,22 +55,38 @@
     function startCountdown() {
         const seconds = parseInt(document.getElementById('inputField').value);
 
+        if (isNaN(seconds) || seconds <= 0) {
+            alert("Podaj poprawną ilość sekund większą niż zero.");
+            return;
+        }
+
         let remainingSeconds = seconds;
         updateCountdown(remainingSeconds);
 
-        intervalId = setInterval(function() {
+        intervalId = setInterval(function () {
             remainingSeconds--;
 
             if (remainingSeconds >= 0) {
                 updateCountdown(remainingSeconds);
             } else {
                 clearInterval(intervalId);
+                document.getElementById('countdown').innerText = "Upłynął cały czas!";
             }
         }, 1000);
     }
 
     function updateCountdown(seconds) {
-        document.getElementById('countdown').innerText = seconds;
+        const minutes = Math.floor(seconds / 60);
+        const remainingSeconds = seconds % 60;
+
+        const formattedMinutes = padZero(minutes);
+        const formattedSeconds = padZero(remainingSeconds);
+
+        document.getElementById('countdown').innerText = `${formattedMinutes}:${formattedSeconds}`;
+    }
+
+    function padZero(number) {
+        return number < 10 ? `0${number}` : number;
     }
 </script>
 </body>
