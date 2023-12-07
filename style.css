@@ -1,80 +1,56 @@
-/* style.css */
-
 body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition: background-color 1s; /* Dodaj ogólny efekt przejścia dla tła strony */
+    transition: background-color 1s;
+}
+
+header {
+    background-color: #DDD0C8;
+    color: #323232;
+    padding: 10px;
 }
 
 .container {
     max-width: 100%;
-    margin: 0 auto;
+    margin: 0 auto; /* Wyśrodkuj kontenery */
 }
 
+/* Styl do centrowania tekstu */
 .center-text {
     text-align: center;
 }
 
+/* Padding do maina */
 .container.main {
-    padding: 20px; /* Dodaj padding dla lepszego rozkładu treści */
+    padding: 20px;
 }
 
+/* Padding dolny do maina */
+.container.main {
+    padding-bottom: 100px;
+}
+
+/* Max szerokosc maina */
 .container.main section {
-    max-width: 800px; /* Ogranicz szerokość tekstu dla czytelności */
-    margin: 0 auto; /* Wyśrodkuj tekst */
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-/* Dodaj do pliku style.css */
-
-/* Dodaj do pliku style.css */
-
-/* Dodaj do pliku style.css */
-
-.sidebar-right {
-    flex: 0 0 25%; /* Szerokość kontenera sidebar - możesz dostosować według potrzeb */
-    margin: 1em;
-    padding: 1em;
-    border: 1px solid #ddd;
-    background-color: #f1f1f1; /* Kolor tła dla kontrastu */
-    position: fixed; /* Kontener będzie stał na swoim miejscu nawet przy przewijaniu */
-    center: 0;
-    right: 0; /* Umieść kontener na prawo */
-    max-height: 100vh; /* Maksymalna wysokość, aby nie zajmował całego ekranu */
-    overflow: auto; /* Dodaj pasek przewijania, jeśli zawartość jest zbyt duża */
-}
-
-.sidebar-right h2 {
-    color: #333; /* Kolor tytułu */
-}
-
-.sidebar-right p {
-    color: #555; /* Kolor tekstu w kontenerze sidebar */
-}
-
-
-
-
-header {
-    background-color: #DDD0C8; /* Beige */
-    color: #323232; /* Dark grey for text on beige background */
-    text-align: center;
-    padding: 1em;
-}
-
+/* Stylizacje dla nawigacji */
 nav {
     display: flex;
-    justify-content: space-around;
-    background-color: #323232; /* Dark grey */
-    padding: 1em;
+    justify-content: space-around; /* Rozmieszczenie po rowno przyciskow nava */
+    background-color: #323232;
+    padding: 15px;
 }
 
 nav a {
     color: #fff;
     text-decoration: none;
     padding: 10px 15px;
-    border-radius: 5px;
-    background-color: #555; /* Dodaj kolor tła */
+    border-radius: 100px; /* Zaokraglenie przyciskow nawyigacyjnych */
+    background-color: #555; /* Kolor tła */
     transition: background-color 0.3s;
 }
 
@@ -82,47 +58,21 @@ nav a:hover {
     background-color: #777; /* Zmiana koloru tła po najechaniu myszką */
 }
 
-section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 1em;
-}
-
-article {
-    flex: 1;
-    margin: 1em;
-    padding: 1em;
-    border: 1px solid #ddd;
-}
-
-aside {
-    flex: 0 0 25%; /* Sidebar will take 25% of the container width */
-    margin: 1em;
-    padding: 1em;
-    border: 1px solid #ddd;
-}
-
+/* Styl dla footera */
 .footer {
-    background-color: #DDD0C8; /* Beige for consistency with header */
-    color: #323232; /* Dark grey for text on beige background */
-    text-align: center;
-    padding: 1em;
+    background-color: #DDD0C8;
+    color: #323232;
+    padding: 15px;
     position: fixed;
     width: 100%;
     bottom: 0;
-    border-top: 1px solid #777; /* Dodaj górną ramkę */
-}
-
-.footer {
+    border-top: 3px solid #111; /* Dodaj górną ramkę */
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    justify-content: center; /* Rozmieszczenie po rowno rzeczy w footerze */
     text-align: center;
 }
 
-/* Styl ikon mediów społecznościowych */
+/* Styl dla ikon */
 .social-icons {
     display: flex;
     align-items: center;
@@ -133,23 +83,23 @@ aside {
     margin: 0 10px; /* Odstęp między ikonami */
 }
 
-/* Dodaj klasę minutnik */
+/* Styl dla minutnika */
 .minutnik {
     text-align: center;
-    margin-top: 20px; /* Dodaj margines na górę dla estetyki */
+    margin-top: 20px; /* Margines nad dla estetyki */
 }
 
 .minutnik input {
-    padding: 15px; /* Zwiększ rozmiar pola do wprowadzania czasu */
-    font-size: 18px; /* Zwiększ rozmiar czcionki */
-    border: 2px solid #555; /* Dodaj obramowanie pola do wprowadzania czasu */
+    padding: 15px; /* Rozmiar pola do wprowadzania czasu */
+    font-size: 18px; /* Rozmiar czcionki */
+    border: 2px solid #555; /* Obramowanie pola do wprowadzania czasu */
     border-radius: 5px; /* Zaokrąglony kształt */
-    margin-right: 10px; /* Dodaj odstęp między polem a przyciskiem */
+    margin-right: 10px; /* Odstęp między polem a przyciskiem */
 }
 
 .minutnik button {
-    padding: 15px 20px; /* Zwiększ rozmiar przycisku */
-    font-size: 18px; /* Zwiększ rozmiar czcionki */
+    padding: 15px 20px; /* Rozmiar przycisku */
+    font-size: 18px; /* Rozmiar czcionki */
     border-radius: 10px; /* Zaokrąglony kształt przycisku */
     background-color: #555; /* Kolor tła przycisku */
     color: #fff; /* Kolor tekstu przycisku */
@@ -161,19 +111,19 @@ aside {
 }
 
 .minutnik #countdown {
-    font-size: 36px; /* Zwiększ rozmiar czcionki dla wyświetlanego czasu */
-    margin-top: 20px; /* Dodaj dodatkowy margines na górę */
+    font-size: 36px; /* Rozmiar czcionki dla wyświetlanego czasu */
+    margin-top: 20px; /* Margines */
 }
 
-/* Dodaj styl dla sekcji kolor */
+/* Styl dla sekcji kolor */
 .kolor {
     text-align: center;
     margin-top: 50px;
 }
 
 .kolor button {
-    padding: 15px 20px; /* Zwiększ rozmiar przycisku */
-    border-radius: 10px; /* Zaokrąglony kształt przycisku */
+    padding: 15px 20px; /* Rozmiar przycisku */
+    border-radius: 10px; /* Kształt przycisku */
     background-color: #555; /* Kolor tła przycisku */
     color: #fff; /* Kolor tekstu przycisku */
     transition: background-color 0.3s;
